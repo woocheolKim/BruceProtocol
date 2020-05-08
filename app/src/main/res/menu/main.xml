@@ -1,14 +1,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/home"
-        android:icon="@mipmap/ic_launcher"
-        android:title="홈"
+        android:icon="@drawable/ic_home"
+        android:title="@string/menu_home"
         android:checked="true"
         android:iconTint="@color/home"/>
-
     <item
         android:id="@+id/log"
-        android:icon="@mipmap/ic_launcher_round"
-        android:title="기록"
-        android:iconTint="@color/logger"/>
+        android:icon="@drawable/ic_record"
+        android:title="@string/menu_record"
+        android:iconTint="@color/documents"/>
 </menu>
