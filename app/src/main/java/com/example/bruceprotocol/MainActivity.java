@@ -15,7 +15,7 @@ import com.fxn.BubbleTabBar;
 import com.fxn.OnBubbleClickListener;
 
 public class MainActivity extends AppCompatActivity {
-    ActivityMainBinding binding;
+    public static ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
