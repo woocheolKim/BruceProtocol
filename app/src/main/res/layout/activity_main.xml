@@ -1,30 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    xmlns:tools="http://schemas.android.com/tools">
     <RelativeLayout
-        android:id="@+id/rl_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#C8C8C8"
-        android:layout_above="@id/btb_main"/>
-    <com.fxn.BubbleTabBar
-        android:id="@+id/btb_main"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#FFF"
-        android:elevation="16dp"
-        android:padding="7dp"
-        android:layout_alignParentBottom="true"
-        app:bubbletab_menuResource="@menu/main"
-        app:bubbletab_disabled_icon_color="@color/colorPrimaryDark"
-        app:bubbletab_horizontal_padding="20dp"
-        app:bubbletab_icon_size="20dp"
-        app:bubbletab_title_size="16sp"
-        app:bubbletab_icon_padding="5sp"
-        app:bubbletab_vertical_padding="10dp">
-    </com.fxn.BubbleTabBar>
-</RelativeLayout>
+        tools:context=".MainActivity">
+        <RelativeLayout
+            android:id="@+id/rl_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#C8C8C8"
+            android:layout_above="@id/btb_main"/>
+        <com.fxn.BubbleTabBar
+            android:id="@+id/btb_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFF"
+            android:elevation="16dp"
+            android:padding="7dp"
+            android:layout_alignParentBottom="true"
+            app:bubbletab_menuResource="@menu/main"
+            app:bubbletab_disabled_icon_color="@color/colorPrimaryDark"
+            app:bubbletab_horizontal_padding="20dp"
+            app:bubbletab_icon_size="20dp"
+            app:bubbletab_title_size="16sp"
+            app:bubbletab_icon_padding="5sp"
+            app:bubbletab_vertical_padding="10dp">
+        </com.fxn.BubbleTabBar>
+    </RelativeLayout>
+</layout>
