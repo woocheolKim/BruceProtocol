@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
+import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.example.bruceprotocol.Tools.Dlog;
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
         changeMenu(new HomeFragment());
