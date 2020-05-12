@@ -42,4 +42,5 @@ dependencies {
 
     implementation 'com.fxn769:bubbletabbar:1.0.5'
     implementation 'com.gusakov:pulse-countdown:1.0.0-rc2'
+    implementation 'com.github.GrenderG:Toasty:1.4.0'
 }

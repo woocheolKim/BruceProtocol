@@ -6,4 +6,6 @@
 
     <color name="defaultBlack">#000</color>
     <color name="defaultYellow">#fff100</color>
+
+    <color name="gray">#808080</color>
 </resources>

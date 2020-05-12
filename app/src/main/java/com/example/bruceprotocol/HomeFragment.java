@@ -24,6 +24,7 @@ import kotlin.jvm.functions.Function0;
  * A simple {@link Fragment} subclass.
  */
 public class HomeFragment extends Fragment {
+    static boolean isPlaying;
     FragmentHomeBinding binding;
 
     @Override
@@ -33,6 +34,8 @@ public class HomeFragment extends Fragment {
         binding.setVariable(BR.homeFragment, this);
 
         binding.btnStart.setOnTouchListener(new ViewClickEffect());
+        binding.btnPause.setOnTouchListener(new ViewClickEffect());
+        binding.btnStop.setOnTouchListener(new ViewClickEffect());
 
         return binding.getRoot();
     }
@@ -48,11 +51,41 @@ public class HomeFragment extends Fragment {
         binding.pcdCntDwn.start(new Function0<Unit>() {
             @Override
             public Unit invoke() {
+                isPlaying = true;
                 binding.rlCounter.setVisibility(View.GONE);
+                binding.llNonPlay.setVisibility(View.GONE);
+                binding.llPlay.setVisibility(View.VISIBLE);
                 binding.rlParent.setBackgroundResource(R.color.defaultYellow);
                 MainActivity.binding.btbMain.setBackgroundResource(R.color.defaultBlack);
                 return null;
             }
         });
+    }
+
+    public boolean stop(View view){
+        MainActivity.vib.vibrate(50);
+
+        isPlaying = false;
+
+        binding.llNonPlay.setVisibility(View.VISIBLE);
+        binding.llPlay.setVisibility(View.GONE);
+        binding.rlParent.setBackgroundResource(R.color.white);
+        MainActivity.binding.btbMain.setBackgroundResource(R.color.white);
+
+        return false;
+    }
+
+    public void pause(View view){
+        isPlaying = !isPlaying;
+
+        if (isPlaying){
+            binding.btnPause.setText(getText(R.string.pause));
+            binding.rlParent.setBackgroundResource(R.color.defaultYellow);
+            MainActivity.binding.btbMain.setBackgroundResource(R.color.defaultBlack);
+        }else{
+            binding.btnPause.setText(getText(R.string.start));
+            binding.rlParent.setBackgroundResource(R.color.white);
+            MainActivity.binding.btbMain.setBackgroundResource(R.color.white);
+        }
     }
 }

@@ -16,20 +16,69 @@
             android:layout_height="match_parent"
             android:background="#C8C8C8"
             tools:context=".HomeFragment">
-            <Button
-                android:id="@+id/btn_start"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_centerHorizontal="true"
-                android:layout_alignParentBottom="true"
+            <LinearLayout
+                android:id="@+id/ll_nonPlay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginBottom="50dp"
-                android:background="@drawable/ic_start"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:textSize="18dp"
-                android:textStyle="bold"
-                android:text="@string/start"
-                android:onClick="@{homeFragment::start}"/>
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true">
+                <Button
+                    android:id="@+id/btn_start"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:background="@drawable/ic_start"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:text="@string/start"
+                    android:onClick="@{homeFragment::start}"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_play"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="50dp"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true">
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+                    <Button
+                        android:id="@+id/btn_stop"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/ic_start"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        android:text="@string/stop"
+                        android:onLongClick="@{(view) -> homeFragment.stop(view)}"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+                    <Button
+                        android:id="@+id/btn_pause"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/ic_start"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        android:text="@string/pause"
+                        android:longClickable="true"
+                        android:onClick="@{homeFragment::pause}"/>
+                </RelativeLayout>
+            </LinearLayout>
         </RelativeLayout>
         <RelativeLayout
             android:id="@+id/rl_counter"

@@ -5,4 +5,8 @@
     <string name="menu_record">Record</string>
 
     <string name="start">Start</string>
+    <string name="stop">Stop</string>
+    <string name="pause">Pause</string>
+
+    <string name="exit">Tap the \'Back\' button again to exit.</string>
 </resources>

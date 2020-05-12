@@ -22,11 +22,11 @@ public class ViewClickEffect implements View.OnTouchListener {
                     v.setScaleX(0.95f);
                     v.setScaleY(0.95f);
                     if (v instanceof ImageView){
-                        drawable = ((ImageView)v).getDrawable();
+                        drawable = ((ImageView)v).getDrawable().mutate();
                         drawable.setColorFilter(0x77000000, PorterDuff.Mode.SRC_ATOP);
                         v.invalidate();
                     }else if(v instanceof Button){
-                        drawable = v.getBackground();
+                        drawable = v.getBackground().mutate();
                         drawable.setColorFilter(0x77000000, PorterDuff.Mode.SRC_ATOP);
                         v.invalidate();
                     }else if(v instanceof TextView){
@@ -44,11 +44,11 @@ public class ViewClickEffect implements View.OnTouchListener {
                     v.setScaleX(1f);
                     v.setScaleY(1f);
                     if (v instanceof ImageView){
-                        drawable = ((ImageView)v).getDrawable();
+                        drawable = ((ImageView)v).getDrawable().mutate();
                         drawable.clearColorFilter();
                         v.invalidate();
                     }else if(v instanceof Button){
-                        drawable = ((Button)v).getBackground();
+                        drawable = ((Button)v).getBackground().mutate();
                         drawable.clearColorFilter();
                         v.invalidate();
                     }else if(v instanceof TextView){
